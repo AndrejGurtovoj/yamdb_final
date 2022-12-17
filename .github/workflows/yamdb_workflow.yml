@@ -6,7 +6,8 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     steps:
-
+    - uses: actions/checkout@v2
+    - name: Set up Python 
       uses: actions/setup-python@v2
       with:
         python-version: 3.7
@@ -40,7 +41,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: andreygurtovoy/yamdb:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/api_yamdb_for_docker:latest
   deploy:
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
