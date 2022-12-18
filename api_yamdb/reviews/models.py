@@ -1,6 +1,5 @@
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
-
 from api.validators import year_validator
 from users.models import User
 
