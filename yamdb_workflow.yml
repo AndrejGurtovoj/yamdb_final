@@ -37,16 +37,17 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }} 
           password: ${{ secrets.DOCKER_PASSWORD }}
+          context: api_yamdb/
       - name: Push to Docker Hub
         uses: docker/build-push-action@v2
         with:
-          context: api_yamdb
           push: true
-          tags: rock4ts/infra-web-yamdb:latest
+          context: ./api_yamdb/
+          tags: andrejgurtovoj/api_yamdb:latest
   deploy:
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
-    if: github.ref == ('refs/heads/master' || 'refs/heads/main')
+    if: github.ref == 'refs/heads/master'
     steps:
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
