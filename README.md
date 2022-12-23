@@ -1,6 +1,6 @@
 # yamdb_final
 
-![example workflow](https://github.com/serdron/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+![example workflow](https://github.com/AndrejGurtovoj/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 Запуск docker-compose Описание проекта Приложение YaMDb состоит из нескольких сервисов, запущеные в разных, связанных контейнерах:
 
